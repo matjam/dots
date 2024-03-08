@@ -39,7 +39,10 @@ kitty
 There's probably something I missed. To install:
 
 ```sh
-yay -S full-dracula-theme-git flat-remix-gtk lxappearance xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland wofi wlr-randr swww swayidle swaylock starship nvidia-dkms  nvidia-settings nvidia-utils libva-nvidia-driver libva hyprland grim slurp zsh kitty
+yay -S full-dracula-theme-git flat-remix-gtk lxappearance xdg-desktop-portal \
+    xdg-desktop-portal-gtk xdg-desktop-portal-hyprland wofi wlr-randr swww \
+    swayidle swaylock starship nvidia-dkms  nvidia-settings nvidia-utils \
+    libva-nvidia-driver libva hyprland grim slurp zsh kitty
 ```
 
 gnome deps
