@@ -9,6 +9,7 @@ I'm running nvidia, so you'll need to change the gpu stuff if you're not. But th
 
 1. You will need the following packages. Some are from AUR.
 
+```
 full-dracula-theme-git
 flat-remix-gtk
 lxappearance (to set the gtk theme)
@@ -33,8 +34,9 @@ slurp
 gnome-keyring (or the kde equivalent)
 zsh
 kitty
+```
 
-There's probably something I missed.
+There's probably something I missed. To install:
 
 ```sh
 yay -S full-dracula-theme-git flat-remix-gtk lxappearance xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland wofi wlr-randr swww swayidle swaylock starship nvidia-dkms  nvidia-settings nvidia-utils libva-nvidia-driver libva hyprland grim slurp zsh kitty
