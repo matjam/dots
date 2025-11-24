@@ -1,0 +1,100 @@
+{
+  // Waybar config — minimal, black, bottom, single output
+  "output": ["HDMI-A-1", "DP-1"],
+  "position": "top",
+  "layer": "top",
+  "exclusive": true,
+  "height": 32,
+  "margin": "0",
+  "spacing": 8,
+  "fixed-center": true,
+
+  "modules-left":   ["image#archlinux-rainbow", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right":  [
+	  "tray", 
+	  "pulseaudio",
+	  "clock",
+	  "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "active-only": false,
+    "all-outputs": false,
+    "sort-by-number": true,
+    "disable-scroll-wraparound": true,
+    "persistent_workspaces": { "HDMI-A-1": [1,2,3,4,5,6,7,8,9], "DP-1": [10] },
+    "on-scroll-up":   "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1"
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 140,
+    "separate-outputs": true
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+        "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+        "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "phone-muted": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "kmix --nosystemtray"
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%a %b %d  %I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ffead3'><b>{}</b></span>",
+                          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                          }
+                }
+  },
+
+  "image#archlinux-rainbow": {
+	  "path": "/home/matjam/.config/waybar/archlinux-rainbow.svg",
+	  "size": 24
+  },
+
+  "custom/power": {
+    "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+  }
+}
+

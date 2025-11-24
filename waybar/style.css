@@ -1,0 +1,109 @@
+/* Waybar — minimal black theme (monochrome, low height) */
+
+/* Bar container */
+window#waybar {
+  background: #000000;
+  color: #d8d8d8;
+  font-family: "Arimo Nerd Font", Arimo, Inter, JetBrainsMono, SFMono-Regular, Menlo, DejaVu Sans Mono, monospace, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Compact layout: keep modules tight and transparent */
+window#waybar > box {
+  padding: 0;
+}
+
+window#waybar > box > * {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Workspaces: no pills, monochrome underline for active */
+#workspaces {
+  padding: 0 4px;
+}
+#workspaces button {
+  background: transparent;
+  color: #bcbcbc;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2px 8px 1px;
+  margin: 2px 2px 0;
+  border-bottom: 2px solid transparent;
+}
+#workspaces button.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+#workspaces button.urgent {
+  color: #ffffff;
+  border-bottom-color: #888888; /* still monochrome */
+}
+#workspaces button:hover {
+  color: #e0e0e0;
+}
+
+/* Hyprland submap indicator */
+#submap {
+  color: #cfcfcf;
+}
+
+/* Center window title: bold but compact */
+#window {
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+/* Right-side modules: uniform spacing, no backgrounds */
+#pulseaudio,
+#tray,
+#clock,
+#custom-power {
+  background: transparent;
+  margin: 0 2px;
+}
+
+/* Muted state stays neutral */
+#pulseaudio.muted {
+  color: #9a9a9a;
+}
+
+#archlinux-rainbow {
+  padding: 0 10px;
+}
+
+/* Tooltips: monochrome */
+tooltip {
+  background: #0d0d0d;
+  color: #e0e0e0;
+  border: 1px solid #222222;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+/* Popovers (e.g., tray menus) */
+popover {
+  background: #0d0d0d;
+  border: 1px solid #222222;
+  border-radius: 6px;
+}
+
+/* Prevent theme leaks (no glow, no color blocks) */
+* {
+  box-shadow: none;
+  background-clip: padding-box;
+}
+
+menu {
+  border-radius: 15px;
+  background: #161320;
+  color: #B5E8E0;
+}
+menuitem {
+  border-radius: 15px;
+}
